@@ -3,6 +3,7 @@ FROM debian:buster
 
 #Enable Noninteractive mode && preconfig mysql select
 ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN echo "mysql-apt-config mysql-apt-config/select-server select mysql-5.7" | debconf-set-selections
 
 #For Update & vim install & wget install
